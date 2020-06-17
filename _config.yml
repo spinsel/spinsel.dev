@@ -1,0 +1,37 @@
+title: Spinsel
+author: Matthijs Poppe
+email: me@spinsel.dev
+description: Blog about computers, science and math
+
+github_repo: "https://github.com/spinsel/spinsel.dev"
+
+github_username: spinsel
+reddit_username: spinseldev
+telegram_username: spinsel
+
+google_analytics: UA-166030783-1
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: posts
+    values:
+      layout: post
+      author: Matthijs Poppe
+
+sass:
+  sass_dir: _sass
+  sourcemap: never
+  style: compressed
+
+markdown: kramdown
+theme: minima
+
+blog_post_series:
+  ghidra_brainfuck:
+    name: 'Implementing a brainfuck CPU in Ghidra'
+    ongoing: true
+    future_posts:
+      - Renaming the analyzer and adding a manual
+      - Recognizing common patterns

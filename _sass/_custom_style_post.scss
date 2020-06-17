@@ -1,0 +1,31 @@
+code{
+    font-family: 'PT Mono', monospace;
+}
+
+.blog-post-series-block{
+    border: 1px solid black;
+    padding:10px;
+    margin-bottom:15px;
+
+    ol, p{
+        margin-bottom: 0px;
+    }
+
+    p{
+        margin-top: 15px;
+    }
+}
+
+.small-table{
+    & > thead > tr > th, & > tbody > tr > td{
+        padding: 5px 10px;
+    }
+}
+
+.social-media-list svg.svg-icon, span.username{
+    vertical-align: middle;
+}
+
+header.site-header{
+    border-top: none;
+}

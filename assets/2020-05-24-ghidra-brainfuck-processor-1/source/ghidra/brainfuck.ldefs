@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<language_definitions>
+    <language processor="brainfuck"
+              endian="little"
+              size="16"
+              variant="default"
+              version="1.0"
+              slafile="brainfuck.sla"
+              processorspec="brainfuck.pspec"
+              id="brainfuck:2:default">
+        <description>brainfuck</description>
+        <compiler name="default" spec="brainfuck.cspec" id="default"/>
+    </language>
+</language_definitions>

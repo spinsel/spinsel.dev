@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<processor_spec>
+    <default_memory_blocks>
+        <memory_block name="ram" start_address="ram:0x0000" length="0x1000" mode="rw"/>
+        <memory_block name="bdest" start_address="bdest:0x0000" length="0x1000" mode="r" initialized="true"/>
+    </default_memory_blocks>
+    
+    <default_symbols>
+        <symbol name="start" address="rom:0x0000" type="code" entry="true"/>
+    </default_symbols>
+
+    <context_data>
+        <tracked_set space="rom" first="0x0000" last="0x0000">
+            <set name="ptr" val="0"/>
+        </tracked_set>
+    </context_data>
+</processor_spec>

@@ -1,0 +1,3 @@
+{%- assign page_id_slug = page.id | slugify -%}
+{%- assign page_assets = "/assets/" | append: page_id_slug -%}
+{%- assign page_images = page_assets | append: "/images" -%}

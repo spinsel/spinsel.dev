@@ -1,0 +1,5 @@
+<ul class="social-media-list">
+    {%- if site.github_username -%}<li><a href="https://github.com/{{ site.github_username| cgi_escape | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/minima-social-icons.svg#github' | relative_url }}"></use></svg> <span class="username">{{ site.github_username| escape }}</span></a></li>{%- endif -%}
+    {%- if site.reddit_username -%}<li><a href="https://reddit.com/u/{{ site.reddit_username| cgi_escape | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/font-awesome-icons.svg#reddit' | relative_url }}"></use></svg> <span class="username">{{ site.reddit_username| escape }}</span></a></li>{%- endif -%}
+    {%- if site.telegram_username -%}<li><a href="https://t.me/{{ site.telegram_username| cgi_escape | escape }}"><svg class="svg-icon"><use xlink:href="{{ '/assets/font-awesome-icons.svg#telegram' | relative_url }}"></use></svg> <span class="username">{{ site.telegram_username| escape }}</span></a></li>{%- endif -%}
+</ul>

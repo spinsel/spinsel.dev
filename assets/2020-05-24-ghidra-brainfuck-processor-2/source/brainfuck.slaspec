@@ -1,0 +1,39 @@
+define endian=little;
+define alignment=1;
+
+define space register     type=register_space  size=2  wordsize=2;
+define space ram          type=ram_space       size=2  wordsize=2;
+define space rom          type=ram_space       size=2  wordsize=1  default;
+define space dummy_space  type=ram_space       size=2  wordsize=2;
+
+define register offset=0x00 size=2 [pc ptr dummy_reg];
+
+define token instr(8)
+    op = (0, 3)
+;
+
+:> is op=0x0 {
+    ptr = ptr + 1;
+}
+
+:< is op=0x1 {
+    ptr = ptr - 1;
+}
+
+:+ is op=0x2 {
+    local c:2 = *[ram]ptr;
+    c = c + 1;
+    *[ram]ptr = c;
+}
+
+:- is op=0x3 {
+    local c:2 = *[ram]ptr;
+    c = c - 1;
+    *[ram]ptr = c;
+}
+
+:. is op=0x4 {}
+:, is op=0x5 {}
+
+:[ is op=0x6 {}
+:] is op=0x7 {}

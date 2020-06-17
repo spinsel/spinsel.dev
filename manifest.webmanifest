@@ -1,0 +1,26 @@
+{
+    "name": "Spinsel",
+    "short_name": "Spinsel",
+    "description": "Blog about computers, science and math",
+    "icons": [
+      {
+        "src": "/assets/favicon/favicon.svg",
+        "type": "image/svg"
+      },
+      {
+        "src": "/assets/favicon/favicon_300ppi.png",
+        "sizes": "1000x1000",
+        "type": "image/png"
+      },
+      {
+        "src": "/assets/favicon/favicon_192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ],
+    "background_color": "#fbf8ef",
+    "theme_color": "#fbf8ef",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/"
+}

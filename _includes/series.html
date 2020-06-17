@@ -1,0 +1,29 @@
+<div class="blog-post-series-block">
+    {%- assign series = site.blog_post_series[page.series]-%}
+    {%- assign series_name = series.name-%}
+    This blog post is part of the series <i>{{series_name}}</i>:
+
+    <ol>
+        {%- assign series_posts = site.posts | where: "series", page.series | sort: "series_part"-%}
+        {%- for post in series_posts-%}
+            <li>
+                {%- assign title_parts = post.title | split: ":"-%}
+                {%- assign title = title_parts[1]-%}
+
+                {%-if page.id == post.id-%}
+                    <b>{{title}} (current post)</b>
+                {%- else-%}
+                    <a href="{{post.url}}">{{title}}</a>
+                {%- endif-%}
+            </li>
+        {%- endfor-%}
+
+        {%- for post in series.future_posts-%}
+            <li>{{post}} (future post)</li>
+        {%- endfor-%}
+    </ol>
+
+    {%- if series.ongoing-%}
+        <p>More posts may be added to this series in the future.</p>
+    {%- endif-%}
+</div>

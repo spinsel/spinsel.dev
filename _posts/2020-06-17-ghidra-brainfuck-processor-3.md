@@ -423,7 +423,7 @@ The decompiler recognizes the redundancy of `+-` and it does not show up in the 
 
 That's it! The decompiler is now able to decompile any compiled brainfuck binary. Call `bfc.py` on your favorite brainfuck program and see what the decompilation looks like in Ghidra. One thing that will massively clean up the decompilation is recognizing common patterns. Right now `[-]` is decompiled to `while(c!=0) c--;`, while it could theoretically also be decompiled to the more concise `c=0;`. This is something we'll take a look at in a future post.
 
-Next time, we'll make some small improvements to our processor module. See you then!
+[Next time][next_post], we'll make some small improvements to our processor module. See you then!
 
 You can find the final code for this post [here][final_code].
 
@@ -435,4 +435,5 @@ You can find the final code for this post [here][final_code].
 [control_flow_test_bf]: {{site.github_repo}}/tree/master{{page_assets}}/source/control_flow_test.bf
 [control_flow_test_arm]: {{site.github_repo}}/tree/master{{page_assets}}/source/control_flow_test_arm.s
 [ana_type]: https://github.com/NationalSecurityAgency/ghidra/blob/eaf6ab250df63652cd455f0c051ce7e03f4f641b/Ghidra/Features/Base/src/main/java/ghidra/app/services/AnalyzerType.java
+[next_post]: {{series_posts[3].url}}
 [final_code]: {{site.github_repo}}/tree/master{{page_assets}}/source

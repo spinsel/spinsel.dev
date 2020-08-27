@@ -34,5 +34,4 @@ blog_post_series:
     name: 'Implementing a brainfuck CPU in Ghidra'
     ongoing: true
     future_posts:
-      - Renaming the analyzer and adding a manual
       - Recognizing common patterns

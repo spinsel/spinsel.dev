@@ -84,12 +84,12 @@ The approach to debug the decompiler is as follows:
 - The debugger attaches to the running decompiler process, sets `debugger_present` to `true` and optionally configures some breakpoints.
   After that, the normal execution flow continues.
 
-We add the following code to [`Ghidra/Features/Decompiler/src/decompile/cpp/ghidra_process.cc`][ghidra_process]:
+We add the following code to [`Ghidra/Features/Decompiler/src/decompile/cpp/ghidra_process.cc`][ghidra_process][^volatile]:
 ```cpp
 #include <thread>
 #include <chrono>
 
-bool debugger_present = false;
+volatile bool debugger_present = false;
 void wait_for_debugger() {
     while (!debugger_present)
         std::this_thread::sleep_for(std::chrono::milliseconds(500));
@@ -217,6 +217,9 @@ If you've got an alternative method, let me know!
 
 Happy debugging!
 
+# Footnotes
+[^volatile]: In the original version of this post, I forgot to mark `debugger_present` as `volatile`. While it seems to work fine with gcc, it's better to mark it as `volatile` to ensure the compiler doesn't optimize `debugger_present` away. Thanks to [pelrun][pelrun] for pointing this out!
+
 [builtin_debug]: https://github.com/NationalSecurityAgency/ghidra/issues/720
 [dev_guide]: https://github.com/NationalSecurityAgency/ghidra/blob/master/DevGuide.md
 [gradle]: https://gradle.org/install/
@@ -227,3 +230,5 @@ Happy debugging!
 [pgrep]: https://linux.die.net/man/1/pgrep
 [decomp_capability]: https://github.com/NationalSecurityAgency/ghidra/blob/472ad40077e598dfe01f65afcd0e8c3fd81c060b/Ghidra/Features/Decompiler/src/decompile/cpp/ghidra_process.cc#L497
 [gdb_cmd_file]: https://sourceware.org/gdb/current/onlinedocs/gdb/Command-Files.html#Command-Files
+
+[pelrun]: https://www.reddit.com/user/pelrun/
